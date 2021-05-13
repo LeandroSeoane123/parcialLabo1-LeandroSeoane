@@ -4,7 +4,8 @@
 
 int cargarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS, eFecha arrayFecha[], int tamF);
 void agregarTrabajo (eTrabajo arrayTrabajo[], int posT, int idTrabajo, char* marcaBicicleta, int rodadoBicicleta, int idServicio, int idFecha);
-int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS);
+int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS, eFecha arrayFecha[], int tamF);
+int bajaLogicaTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS, eFecha arrayFecha[], int tamF);
 int buscarServicioPorTrabajo (eTrabajo arrayTrabajo[], int posT, eServicio arrayServicio[], int tamS);
 int buscarFechaPorTrabajo (eTrabajo arrayTrabajo[], int posT, eFecha arrayFecha[], int tamF);
 void mostrarTrabajos (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS, eFecha arrayFecha[], int tamF);

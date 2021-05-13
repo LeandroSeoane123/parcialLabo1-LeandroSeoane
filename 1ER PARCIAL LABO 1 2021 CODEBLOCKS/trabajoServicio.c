@@ -68,7 +68,7 @@ int cargarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[],
     return retorno;
 }
 
-int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS)
+int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS, eFecha arrayFecha[], int tamF)
 {
     int retorno;
     int idTrabajo;
@@ -79,6 +79,7 @@ int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio
     int idFecha;
     int posT;
     int posS;
+    int posF;
     int len;
 
     retorno = 0;
@@ -92,7 +93,11 @@ int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio
 
         if(posT != -1)
         {
-            printf("\nTrabajo encontrado.");
+            puts("\nTRABAJO ENCONTRADO.");
+            posS = buscarServicioPorTrabajo(arrayTrabajo, posT, arrayServicio, tamS);
+            posF = buscarFechaPorTrabajo(arrayTrabajo, posT, arrayFecha, tamF);
+            puts("\n--- ID -------- MARCA -------- RODADO -------- SERVICIO -------- PRECIO -------- FECHA");
+            mostrarUnTrabajo(arrayTrabajo, posT, arrayServicio, posS, arrayFecha, posF);
             tra_cargarUltimoID("config.csv", &idTraStr);
             idTrabajo = atoi(&idTraStr);
             idTrabajo++;
@@ -126,6 +131,63 @@ int modificarTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio
     else
     {
         puts("\nERROR: No hay trabajos cargados para modificar.");
+        retorno = 0;
+    }
+
+    return retorno;
+}
+
+int bajaLogicaTrabajo (eTrabajo arrayTrabajo[], int tamT, eServicio arrayServicio[], int tamS, eFecha arrayFecha[], int tamF)
+{
+    int retorno;
+    int len;
+    int posT;
+    int posS;
+    int posF;
+    int idTrabajo;
+    int confirmacion;
+
+    retorno = 0;
+
+    len = tra_len(arrayTrabajo, tamT);
+
+    if(len > 0)
+    {
+        getInt("\nIngrese el id del trabajo que desea borrar: ", &idTrabajo);
+        posT = buscarTrabajoPorId(arrayTrabajo, tamT, idTrabajo);
+
+        if(posT != -1)
+        {
+            puts("\nTRABAJO ENCONTRADO.");
+            posS = buscarServicioPorTrabajo(arrayTrabajo, posT, arrayServicio, tamS);
+            posF = buscarFechaPorTrabajo(arrayTrabajo, posT, arrayFecha, tamF);
+            puts("\n--- ID -------- MARCA -------- RODADO -------- SERVICIO -------- PRECIO -------- FECHA");
+            mostrarUnTrabajo(arrayTrabajo, posT, arrayServicio, posS, arrayFecha, posF);
+
+            getInt("\nEsta seguro que desea eliminar este trabajo?"
+                   "\nIngrese '1' para si o cualquier otro numero para no: ", &confirmacion);
+
+            if(confirmacion == 1)
+            {
+                arrayTrabajo[posT].isEmpty = VACIO;
+                retorno = 1;
+                puts("\nTRABAJO BORRADO CON EXITO.");
+            }
+            else
+            {
+                puts("\nOPERACION CANCELADA.");
+                retorno = 0;
+            }
+        }
+        else
+        {
+            puts("\nERROR: El ID ingresado no corresponde con ningun trabajo cargado anteriormente.");
+        }
+
+    }
+    else
+    {
+        puts("\nERROR: No hay trabajos cargados para borrar.");
         retorno = 0;
     }
 

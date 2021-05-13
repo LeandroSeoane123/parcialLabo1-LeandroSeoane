@@ -38,13 +38,13 @@
 
 1620914884 e:\leandro\utnfra\programacion i laboratorio i\parciales\1er parcial labo 1 2021 codeblocks\trabajo.h
 
-1620915048 source:e:\leandro\utnfra\programacion i laboratorio i\parciales\1er parcial labo 1 2021 codeblocks\main.c
+1620917457 source:e:\leandro\utnfra\programacion i laboratorio i\parciales\1er parcial labo 1 2021 codeblocks\main.c
 	<stdio.h>
 	<stdlib.h>
 	"trabajoServicio.h"
 	"seoane.h"
 
-1620914986 e:\leandro\utnfra\programacion i laboratorio i\parciales\1er parcial labo 1 2021 codeblocks\trabajoservicio.h
+1620917086 e:\leandro\utnfra\programacion i laboratorio i\parciales\1er parcial labo 1 2021 codeblocks\trabajoservicio.h
 	"trabajo.h"
 	"servicio.h"
 	"fecha.h"
