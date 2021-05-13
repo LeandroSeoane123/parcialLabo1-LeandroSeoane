@@ -48,6 +48,7 @@ void agregarFecha (eFecha arrayFecha[], int posF, int dia, int mes, int anio)
     arrayFecha[posF].dia = dia;
     arrayFecha[posF].mes = mes;
     arrayFecha[posF].anio = anio;
+    arrayFecha[posF].isEmpty = OCUPADO;
 }
 
 

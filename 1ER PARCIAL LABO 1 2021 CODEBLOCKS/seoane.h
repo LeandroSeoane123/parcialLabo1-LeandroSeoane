@@ -7,3 +7,4 @@ void validarMenu (int opcion, int opcionMenor, int opcionMayor);
 void validarDia (int* dia);
 void validarMes (int* mes);
 void validarAnio (int* anio);
+

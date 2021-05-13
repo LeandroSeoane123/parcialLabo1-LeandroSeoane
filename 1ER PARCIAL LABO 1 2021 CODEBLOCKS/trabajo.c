@@ -42,6 +42,46 @@ int buscarLibreTrabajo (eTrabajo arrayTrabajo[], int tam)
     return pos;
 }
 
+int buscarTrabajoPorId (eTrabajo arrayTrabajo[], int tam, int id)
+{
+    int i;
+    int pos;
+
+    pos = -1;
+
+    for(i=0; i<tam; i++)
+    {
+        if(arrayTrabajo[i].isEmpty == OCUPADO)
+        {
+            if(arrayTrabajo[i].id == id)
+            {
+                pos = i;
+                break;
+            }
+        }
+    }
+
+    return pos;
+}
+
+int tra_len (eTrabajo arrayTrabajo[], int tam)
+{
+    int i;
+    int len;
+
+    len = 0;
+
+    for(i=0; i<tam; i++)
+    {
+        if(arrayTrabajo[i].isEmpty == OCUPADO)
+        {
+            len++;
+        }
+    }
+
+    return len;
+}
+
 int tra_guardarUltimoID(char* path, int id)
 {
     FILE* pFile;

@@ -36,16 +36,16 @@ int main()
             cargarTrabajo(arrayDeTrabajos, CT, arrayDeServicios, CS, arrayDeFechas, CF);
             break;
         case 2:
-            puts("\nPROXIMAMENTE");
+            modificarTrabajo(arrayDeTrabajos, CT, arrayDeServicios, CS);
             break;
         case 3:
             puts("\nPROXIMAMENTE");
             break;
         case 4:
-            puts("\nPROXIMAMENTE");
+            mostrarTrabajos(arrayDeTrabajos, CT, arrayDeServicios, CS, arrayDeFechas, CF);
             break;
         case 5:
-            puts("\nPROXIMAMENTE");
+            mostrarServicios(arrayDeServicios, CS);
             break;
         case 6:
             puts("\nPROXIMAMENTE");
